@@ -19,7 +19,7 @@ body{font-family:'Vazirmatn',sans-serif;background:var(--bg);color:var(--text);l
 .brand{display:flex;align-items:center;gap:9px;font-weight:900;font-size:.95rem}
 .brand .bolt{width:34px;height:34px;border-radius:11px;display:grid;place-items:center;color:#fff;background:linear-gradient(135deg,var(--a3),var(--a1))}
 .back{color:var(--text);text-decoration:none;font-size:.8rem;font-weight:800;display:inline-flex;gap:6px;align-items:center;border:1px solid var(--line);background:#fff;border-radius:999px;padding:8px 14px}
-.app{max-width:640px;margin:0 auto;padding:6px 14px 170px}
+.app{max-width:640px;margin:0 auto;padding:6px 14px 180px}
 .model-pill{text-align:center;margin:12px 0 4px}
 .model-pill span{display:inline-flex;align-items:center;gap:7px;background:#171a26;color:#fff;font-size:.78rem;font-weight:800;border-radius:999px;padding:7px 16px}
 .hero-title{text-align:center;font-size:1.55rem;font-weight:900;margin:14px 0 4px;line-height:1.6}
@@ -43,6 +43,17 @@ body{font-family:'Vazirmatn',sans-serif;background:var(--bg);color:var(--text);l
 .bub.a{background:var(--card);border:1px solid var(--line);color:var(--text);align-self:stretch;border-bottom-left-radius:6px;width:100%}
 .bub.sys{background:#fff;border:1px dashed var(--line);color:var(--muted);align-self:center;font-size:.8rem;text-align:center;white-space:pre-wrap}
 .bub .txt{white-space:pre-wrap}
+.ai-name{font-size:.72rem;color:#7b5cff;font-weight:900;margin-bottom:6px;display:flex;align-items:center;gap:6px}
+.ai-name .dot{width:26px;height:26px;border-radius:50%;background:linear-gradient(135deg,#7b5cff,#ff6b35);display:inline-grid;place-items:center;color:#fff;font-size:.8rem}
+.typing-wrap{display:flex;align-items:center;gap:8px;background:#f4f5fb;border:1px solid var(--line);border-radius:12px;padding:10px 12px;font-size:.82rem;color:#4a3fb5;font-weight:700}
+.typing-wrap .avatar{width:28px;height:28px;border-radius:50%;background:linear-gradient(135deg,#7b5cff,#ff6b35);display:inline-grid;place-items:center;color:#fff;flex-shrink:0}
+.dots{display:inline-flex;gap:4px}
+.dots i{width:7px;height:7px;border-radius:50%;background:#7b5cff;animation:tp 1s infinite}
+.dots i:nth-child(2){animation-delay:.2s}
+.dots i:nth-child(3){animation-delay:.4s}
+@keyframes tp{0%,100%{opacity:.25;transform:translateY(0)}50%{opacity:1;transform:translateY(-3px)}}
+.suggests{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-top:10px}
+.suggests button{border:1px solid var(--line);background:#f6f7fb;border-radius:999px;padding:8px 14px;font-family:inherit;font-size:.75rem;font-weight:700;color:#3c4260;cursor:pointer}
 .box{margin-top:9px;background:#f8f9fd;border:1px solid var(--line);border-radius:13px;padding:11px}
 .box-title{font-size:.74rem;color:var(--muted);margin-bottom:8px;font-weight:800}
 pre.code{direction:ltr;text-align:left;background:#0b0d17;border-radius:10px;padding:12px;overflow-x:auto;font-size:.72rem;line-height:1.7;max-height:260px;overflow-y:auto;color:#c8e3a0;font-family:monospace;white-space:pre;margin:0}
@@ -66,18 +77,13 @@ textarea:focus{outline:none;border-color:var(--a1);background:#fff}
 #status.bad{display:block;background:#fdecec;border:1px solid #f5b5b5;color:#a33}
 .home2{display:flex;align-items:center;justify-content:center;gap:8px;margin-top:10px;padding:11px;border-radius:13px;border:1px solid var(--line);background:#fff;color:var(--text);text-decoration:none;font-weight:800;font-size:.84rem;min-height:48px}
 .foot{text-align:center;color:var(--muted);font-size:.7rem;margin-top:8px;line-height:1.9}
-.typing{display:inline-flex;gap:4px;padding:6px 2px}
-.typing i{width:7px;height:7px;border-radius:50%;background:#9aa0b8;animation:tp 1s infinite}
-.typing i:nth-child(2){animation-delay:.15s}
-.typing i:nth-child(3){animation-delay:.3s}
-@keyframes tp{0%,100%{opacity:.3}50%{opacity:1}}
 iframe.prev{width:100%;height:380px;border:1px solid var(--line);border-radius:10px;background:#fff;margin-top:8px}
 </style>
 </head>
 <body>
 <div class="topbar"><div class="topbar-in"><a class="back" href="index.html"><i class="fa-solid fa-house"></i> خانه</a><div class="brand"><span class="bolt">⚡</span> هوش‌گراف AI</div></div></div>
 <div class="app">
-<div class="model-pill"><span><i class="fa-solid fa-robot"></i> هوش‌گراف 1.0</span></div>
+<div class="model-pill"><span><i class="fa-solid fa-robot"></i> هوش‌گراف رایگان</span></div>
 <div class="hero-title">چی می‌خوای برات انجام بدم؟</div>
 <div class="hero-sub">گفت‌وگو • ساخت کد • آزمون‌ساز درسی</div>
 <div class="chips"><button class="chip active" data-m="chat" type="button">گفت‌وگو</button><button class="chip" data-m="code" type="button">کد HTML</button><button class="chip" data-m="exam" type="button">آزمون درسی</button></div>
@@ -92,23 +98,31 @@ iframe.prev{width:100%;height:380px;border:1px solid var(--line);border-radius:1
 <div class="think-hint" id="thinkHint">تعادلی بین سرعت و دقت</div>
 </div>
 <div id="autoFill">پرامپت از سایت اصلی اومد — فقط دکمه ارسال رو بزن</div>
-<div id="chatLog"><div class="bub sys">سلام! من دستیار هوش‌گرافم. حالت رو انتخاب کن، میزان تفکر رو بذار و بنویس. مثلا: آزمون فصل اول علوم پنجم</div></div>
+<div id="chatLog">
+<div class="bub sys">سلام امیرحسین! من هوش‌گرافم، بدون کلید و رایگان کار می‌کنم. حالت رو انتخاب کن و بنویس.
+<div class="suggests">
+<button type="button" data-s="chat">برنامه درسی بده</button>
+<button type="button" data-s="code">یه سایت کافه بساز</button>
+<button type="button" data-s="exam">آزمون علوم پنجم بساز</button>
+</div>
+</div>
+</div>
 </div>
 <div class="composer"><div class="composer-in">
 <div class="composer-meta"><span id="thinkBadge">تفکر متوسط</span><span class="warn">هوش مصنوعی ممکن است اشتباه کند</span></div>
 <div class="composer-row"><textarea id="prompt" placeholder="پیامت رو بنویس..."></textarea><button id="genBtn" type="button"><i class="fa-solid fa-paper-plane"></i></button></div>
 <div id="status"></div>
 <a class="home2" href="index.html"><i class="fa-solid fa-house"></i> بازگشت به خانه</a>
-<div class="foot">قدرت‌گرفته از Pollinations • اگه جواب نداد ۳۰ ثانیه صبر کن و دوباره بفرست</div>
+<div class="foot">حالت رایگان بدون کلید • اگه جواب نداد فیلترشکن رو خاموش کن و دوباره بفرست</div>
 </div></div>
 <script>
-var API_KEY = 'sk_5j7AfDN6SxC0YeO9DibvAAKfypwo1weB';
-var URL_AUTH = 'https://gen.pollinations.ai/v1/chat/completions';
 var URL_ANON = 'https://text.pollinations.ai/openai';
+var URL_TEXT_BASE = 'https://text.pollinations.ai/';
 var mode = 'chat';
 var thinkingLevel = 'medium';
 var history = [];
 var busy = false;
+var rotTimer = null;
 var genBtn = document.getElementById('genBtn');
 var statusBox = document.getElementById('status');
 var chatLog = document.getElementById('chatLog');
@@ -122,9 +136,9 @@ function thinkLabel() {
   return 'متوسط';
 }
 function thinkInstruction() {
-  if (thinkingLevel === 'low') { return ' خیلی سریع و خلاصه جواب بده. حداکثر ۵ خط کوتاه. وارد جزئیات نشو. '; }
-  if (thinkingLevel === 'high') { return ' عمیق فکر کن. قدم‌به‌قدم استدلال کن. همه حالت‌ها را بررسی کن. بعد جواب کامل و دقیق بده. '; }
-  if (thinkingLevel === 'very') { return ' خیلی خیلی عمیق فکر کن. چند بار جوابت را از اول بررسی کن. مثال و تمرین اضافه کن. در پایان نکته‌های مهم را جمع‌بندی کن. جواب طولانی و کامل بده حتی اگر کمی دیرتر شود. '; }
+  if (thinkingLevel === 'low') { return ' خیلی سریع و خلاصه جواب بده. حداکثر ۵ خط کوتاه. '; }
+  if (thinkingLevel === 'high') { return ' عمیق فکر کن. قدم‌به‌قدم استدلال کن. همه حالت‌ها را بررسی کن. بعد جواب کامل بده. '; }
+  if (thinkingLevel === 'very') { return ' خیلی عمیق فکر کن. جوابت را دوباره بررسی کن. مثال و تمرین اضافه کن. در پایان جمع‌بندی بده. جواب طولانی و کامل بده. '; }
   return ' متعادل جواب بده. نه خیلی کوتاه نه خیلی طولانی. ';
 }
 function thinkTokens() {
@@ -134,10 +148,10 @@ function thinkTokens() {
   return 1500;
 }
 function thinkTime() {
-  if (thinkingLevel === 'low') { return 30000; }
-  if (thinkingLevel === 'high') { return 60000; }
-  if (thinkingLevel === 'very') { return 60000; }
-  return 45000;
+  if (thinkingLevel === 'low') { return 40000; }
+  if (thinkingLevel === 'high') { return 70000; }
+  if (thinkingLevel === 'very') { return 80000; }
+  return 60000;
 }
 function setThinking(t) {
   thinkingLevel = t;
@@ -190,6 +204,18 @@ function setMode(m) {
   };
   promptBox.placeholder = hints[m] || 'پیامت رو بنویس...';
 }
+var sBtns = document.querySelectorAll('.suggests button');
+for (var si = 0; si < sBtns.length; si++) {
+  (function(b){
+    b.addEventListener('click', function(){
+      var k = b.getAttribute('data-s');
+      if (k === 'exam') { setMode('exam'); promptBox.value = 'آزمون فصل اول علوم پنجم با ۱۰ تست و ۳ تشریحی بساز'; }
+      else if (k === 'code') { setMode('code'); promptBox.value = 'یه سایت تک‌صفحه‌ای برای کافه با منو بساز'; }
+      else { setMode('chat'); promptBox.value = 'یه برنامه درسی هفتگی برای پایه پنجم بچین'; }
+      promptBox.focus();
+    });
+  })(sBtns[si]);
+}
 function setMsg(t, txt) {
   if (!txt) { statusBox.className = ''; statusBox.textContent = ''; statusBox.style.display = 'none'; return; }
   statusBox.style.display = 'block';
@@ -197,6 +223,19 @@ function setMsg(t, txt) {
   statusBox.textContent = txt;
 }
 function scrollDown() { try { window.scrollTo({top: document.body.scrollHeight, behavior: 'smooth'}); } catch(e){ window.scrollTo(0, 99999); } }
+function startRot() {
+  stopRot();
+  var msgs = ['گرفتم، دارم فکر می‌کنم...', 'هوش مصنوعی در حال نوشتن جواب است...', 'کمی صبر کن، نزدیک جوابه...', 'دارم کاملش می‌کنم...'];
+  var idx = 0;
+  setMsg('ok', msgs[0]);
+  rotTimer = setInterval(function(){
+    idx = (idx + 1) % msgs.length;
+    setMsg('ok', msgs[idx]);
+  }, 3500);
+}
+function stopRot() {
+  if (rotTimer) { clearInterval(rotTimer); rotTimer = null; }
+}
 function addUser(t) {
   var d = document.createElement('div');
   d.className = 'bub u';
@@ -207,13 +246,39 @@ function addUser(t) {
 function newAIBubble() {
   var box = document.createElement('div');
   box.className = 'bub a';
+  var head = document.createElement('div');
+  head.className = 'ai-name';
+  var av = document.createElement('span');
+  av.className = 'dot';
+  av.textContent = '⚡';
+  head.appendChild(av);
+  var nm = document.createElement('span');
+  nm.textContent = 'هوش‌گراف • تفکر ' + thinkLabel();
+  head.appendChild(nm);
+  box.appendChild(head);
   var txt = document.createElement('div');
   txt.className = 'txt';
-  txt.innerHTML = '<span class="typing"><i></i><i></i><i></i></span>';
+  var wrap = document.createElement('div');
+  wrap.className = 'typing-wrap';
+  var ava = document.createElement('span');
+  ava.className = 'avatar';
+  ava.textContent = '🤖';
+  wrap.appendChild(ava);
+  var lab = document.createElement('span');
+  lab.textContent = 'هوش مصنوعی در حال نوشتن جواب است';
+  wrap.appendChild(lab);
+  var dots = document.createElement('span');
+  dots.className = 'dots';
+  dots.innerHTML = '<i></i><i></i><i></i>';
+  wrap.appendChild(dots);
+  txt.appendChild(wrap);
   box.appendChild(txt);
   chatLog.appendChild(box);
   scrollDown();
   return { box: box, txt: txt };
+}
+function cleanTyping(obj) {
+  try { obj.txt.innerHTML = ''; } catch(e) { obj.txt.textContent = ''; }
 }
 function cleanCode(t) {
   t = (t || '').trim();
@@ -278,12 +343,12 @@ function mkBtn(cls, label, fn) {
   return b;
 }
 function finishTextBubble(obj, text) {
-  obj.txt.textContent = '';
+  cleanTyping(obj);
   var wrap = document.createElement('div');
   wrap.className = 'box';
   var title = document.createElement('div');
   title.className = 'box-title';
-  title.textContent = 'جواب هوش مصنوعی';
+  title.textContent = 'جواب هوش‌گراف';
   wrap.appendChild(title);
   var tb = document.createElement('div');
   tb.className = 'textbox';
@@ -294,12 +359,17 @@ function finishTextBubble(obj, text) {
   addRow(obj.box, [c]);
 }
 function finishCodeBubble(obj, code, titleText) {
-  obj.txt.textContent = 'آماده شد. پیش‌نمایش پایین:';
+  cleanTyping(obj);
+  var done = document.createElement('div');
+  done.textContent = 'آماده شد عزیز! پیش‌نمایش پایینه:';
+  done.style.fontSize = '.82rem';
+  done.style.marginBottom = '6px';
+  obj.txt.appendChild(done);
   var wrap = document.createElement('div');
   wrap.className = 'box';
   var title = document.createElement('div');
   title.className = 'box-title';
-  title.textContent = titleText || 'کد HTML داخل کادر جدا';
+  title.textContent = titleText || 'کد داخل کادر جدا';
   wrap.appendChild(title);
   var pre = document.createElement('pre');
   pre.className = 'code';
@@ -323,7 +393,7 @@ function fetchTimeout(url, opts, ms) {
     ctrl = new AbortController();
     opts = opts || {};
     opts.signal = ctrl.signal;
-    timer = setTimeout(function(){ try{ ctrl.abort(); }catch(e){} }, ms || 45000);
+    timer = setTimeout(function(){ try{ ctrl.abort(); }catch(e){} }, ms || 60000);
   } catch(e) { return fetch(url, opts); }
   return fetch(url, opts).then(function(res){
     if (timer) { clearTimeout(timer); }
@@ -342,64 +412,39 @@ function parseChatJSON(data) {
   } catch(e) { txt = null; }
   return txt;
 }
-function postAuth(msgs) {
-  var body = JSON.stringify({ model: 'openai', messages: msgs, max_tokens: thinkTokens() });
-  return fetchTimeout(URL_AUTH, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + API_KEY },
-    body: body
-  }, thinkTime()).then(function(res){
-    if (res.status === 401) { throw { code: 'AUTH', msg: 'کلید نامعتبر است' }; }
-    if (res.status === 402) { throw { code: 'MONEY', msg: 'اعتبار کلید تمام شده' }; }
-    if (res.status === 429) { throw { code: 'RETRY', msg: 'سرور شلوغ است' }; }
-    if (!res.ok) { throw { code: 'RETRY', msg: 'خطای سرور ' + res.status }; }
-    return res.json();
-  }).then(function(data){
-    var txt = parseChatJSON(data);
-    if (!txt) { throw { code: 'RETRY', msg: 'پاسخ خالی بود' }; }
-    return { text: txt, via: 'key' };
-  });
-}
-function postAnon(msgs) {
-  var body = JSON.stringify({ model: 'openai', messages: msgs, max_tokens: thinkTokens() });
+function postFree(msgs) {
+  var body = JSON.stringify({ model: 'openai', messages: msgs });
   return fetchTimeout(URL_ANON, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: body
   }, thinkTime()).then(function(res){
-    if (!res.ok) { throw new Error('خطای ' + res.status); }
+    if (res.status === 429) { throw new Error('سرور شلوغه، ۳۰ ثانیه دیگه بفرست'); }
+    if (!res.ok) { throw new Error('خطای سرور ' + res.status); }
     return res.json();
   }).then(function(data){
     var txt = parseChatJSON(data);
-    if (!txt) { throw new Error('پاسخ خالی'); }
-    return { text: txt, via: 'free' };
+    if (!txt) { throw new Error('پاسخ خالی بود'); }
+    return txt;
   });
 }
-function getSimple(promptText) {
-  var url = 'https://text.pollinations.ai/' + encodeURIComponent(promptText.slice(0, 1000)) + '?model=openai';
+function getFree(promptText) {
+  var url = URL_TEXT_BASE + encodeURIComponent(promptText.slice(0, 1200)) + '?model=openai';
   return fetchTimeout(url, { method: 'GET' }, thinkTime()).then(function(res){
     if (!res.ok) { throw new Error('خطای ' + res.status); }
     return res.text();
   }).then(function(t){
     t = (t || '').trim();
     if (!t) { throw new Error('پاسخ خالی'); }
-    return { text: t, via: 'get' };
+    return t;
   });
 }
-function callAI(msgs, fallbackText) {
-  return postAuth(msgs).catch(function(e1){
-    return postAnon(msgs).catch(function(e2){
-      return getSimple(fallbackText).catch(function(e3){
-        var m = '';
-        if (e1 && e1.msg) { m = e1.msg; }
-        else if (e2 && e2.message) { m = e2.message; }
-        else if (e3 && e3.message) { m = e3.message; }
-        throw new Error(m || 'اتصال برقرار نشد');
-      });
-    });
+function callFree(msgs, fallbackText) {
+  return postFree(msgs).catch(function(){
+    return getFree(fallbackText);
   });
 }
-var SYS_MAIN = 'تو دستیار فارسی هوش‌گراف هستی. بنیان‌گذار: امیرحسین. خدمات: طراحی سایت ۳۰۰ هزار، پلن پایه ۱۵۰ هزار، آزمون آنلاین ۸۰۰ هزار. ارتباط فقط در شاد با آیدی Amirhosein_01010@. دوستانه و ساده با نیم‌فاصله درست جواب بده. متخصص همه‌چیز هستی.';
+var SYS_MAIN = 'تو دستیار فارسی هوش‌گراف هستی. بنیان‌گذار: امیرحسین. خدمات: طراحی سایت ۳۰۰ هزار، پلن پایه ۱۵۰ هزار، آزمون آنلاین ۸۰۰ هزار. ارتباط فقط در شاد با آیدی Amirhosein_01010@. گرم و صمیمی و خودمونی ولی مودب جواب بده. اول جواب را بده بعد اگر لازم بود یک سوال کوتاه بپرس. با نیم‌فاصله درست بنویس.';
 var SYS_CODE = 'تو برنامه‌نویس وب متخصصی. همیشه فقط یک فایل HTML کامل بده که CSS و JS داخل خودش باشد. مدرن، ریسپانسیو، فارسی راست‌چین با فونت وزیرمتن. هیچ توضیحی نده. خروجی فقط کد باشد.';
 var SYS_EXAM = 'تو طراح آزمون حرفه‌ای مدارس ایران هستی و با سبک قلم‌چی و گاما و همیار درس آشنا هستی. کاربر پایه و فصل را می‌گوید و تو باید بر اساس سرفصل‌های کتاب درسی ایران آزمون استاندارد بسازی. همیشه فقط یک فایل HTML کامل بده که CSS و JS داخل خودش باشد. مشخصات: فارسی و راست‌چین با فونت وزیرمتن، مناسب موبایل، دارای ۱۰ سوال چهارگزینه‌ای و ۳ سوال تشریحی مرتبط با همان فصل، تایمر امتحان، دکمه شروع، نمایش نمره خودکار در پایان، پاسخنامه تشریحی، دکمه تلاش مجدد و دکمه چاپ. سوال‌ها را از مباحث اصلی همان فصل کتاب انتخاب کن و سطح‌بندی آسان و متوسط و سخت داشته باش. هیچ توضیحی خارج از کد نده. خروجی فقط کد باشد.';
 function doChat(p, obj) {
@@ -407,39 +452,33 @@ function doChat(p, obj) {
   if (history.length > 10) { history = history.slice(history.length - 10); }
   var sys = SYS_MAIN + thinkInstruction();
   var msgs = [{ role: 'system', content: sys }].concat(history);
-  setMsg('ok', 'دارم با تفکر ' + thinkLabel() + ' جواب می‌گیرم...');
-  return callAI(msgs, p).then(function(r){
-    history.push({ role: 'assistant', content: r.text });
-    if (isHTML(r.text)) {
-      finishCodeBubble(obj, cleanCode(r.text), 'کد HTML داخل کادر جدا');
-      setMsg('ok', 'جواب آماده شد.');
+  return callFree(msgs, p).then(function(text){
+    history.push({ role: 'assistant', content: text });
+    if (isHTML(text)) {
+      finishCodeBubble(obj, cleanCode(text), 'کد داخل کادر جدا');
     } else {
-      finishTextBubble(obj, r.text);
-      var extra = r.via === 'key' ? 'جواب آماده شد' : 'جواب آماده شد (حالت رایگان)';
-      setMsg('ok', extra);
+      finishTextBubble(obj, text);
     }
+    setMsg('ok', 'جواب اومد، اگه باز سوالی داری بپرس');
   });
 }
 function doCode(p, obj) {
   var sys = SYS_CODE + thinkInstruction();
-  var title = 'کد HTML داخل کادر جدا';
+  var title = 'کد داخل کادر جدا';
   if (isExamRequest(p)) {
     sys = SYS_EXAM + thinkInstruction();
     title = 'آزمون درسی داخل کادر جدا';
-    setMsg('ok', 'آزمون تشخیص داده شد. دارم با تفکر ' + thinkLabel() + ' می‌سازم...');
-  } else {
-    setMsg('ok', 'دارم با تفکر ' + thinkLabel() + ' کد می‌سازم...');
   }
   var msgs = [{ role: 'system', content: sys }, { role: 'user', content: p.slice(0, 2000) }];
-  return callAI(msgs, p).then(function(r){
-    var code = cleanCode(r.text);
+  return callFree(msgs, p).then(function(text){
+    var code = cleanCode(text);
     if (!isHTML(code)) {
-      finishTextBubble(obj, r.text);
-      setMsg('ok', 'جواب آماده شد ولی کد کامل تشخیص داده نشد.');
+      finishTextBubble(obj, text);
+      setMsg('ok', 'جواب اومد ولی کد کامل نبود، متنش را گذاشتم');
       return;
     }
     finishCodeBubble(obj, code, title);
-    setMsg('ok', 'ساخته شد. پایین پیش‌نمایش را ببین.');
+    setMsg('ok', 'ساخته شد! پایین پیش‌نمایش را ببین');
   });
 }
 function doExam(p, obj) {
@@ -447,38 +486,38 @@ function doExam(p, obj) {
   if (p.length < 20) { full = p + '. آزمون کامل با ۱۰ تست و ۳ تشریحی، تایمر و نمره خودکار بساز.'; }
   var sys = SYS_EXAM + thinkInstruction();
   var msgs = [{ role: 'system', content: sys }, { role: 'user', content: full.slice(0, 2000) }];
-  setMsg('ok', 'دارم با تفکر ' + thinkLabel() + ' آزمون را می‌سازم...');
-  return callAI(msgs, full).then(function(r){
-    var code = cleanCode(r.text);
+  return callFree(msgs, full).then(function(text){
+    var code = cleanCode(text);
     if (!isHTML(code)) {
-      finishTextBubble(obj, r.text);
-      setMsg('ok', 'جواب آماده شد ولی کد کامل تشخیص داده نشد.');
+      finishTextBubble(obj, text);
+      setMsg('ok', 'جواب اومد ولی کد کامل نبود، متنش را گذاشتم');
       return;
     }
     finishCodeBubble(obj, code, 'آزمون درسی داخل کادر جدا');
-    setMsg('ok', 'آزمون ساخته شد. پایین پیش‌نمایش را ببین.');
+    setMsg('ok', 'آزمونت ساخته شد! پایین پیش‌نمایش را ببین');
   });
 }
 genBtn.addEventListener('click', function(){
   if (busy) { return; }
   var p = promptBox.value.trim();
-  if (p.length < 2) { setMsg('bad', 'اول بنویس چی می‌خوای'); return; }
+  if (p.length < 2) { setMsg('bad', 'اول بنویس چی می‌خوای عزیز'); return; }
   busy = true;
   genBtn.disabled = true;
-  setMsg('', '');
   addUser(p);
   promptBox.value = '';
   var obj = newAIBubble();
+  startRot();
   var job = null;
   if (mode === 'code') { job = doCode(p, obj); }
   else if (mode === 'exam') { job = doExam(p, obj); }
   else { job = doChat(p, obj); }
   job.then(function(){
-    busy = false; genBtn.disabled = false; scrollDown();
+    busy = false; genBtn.disabled = false; stopRot(); scrollDown();
   }).catch(function(e){
-    busy = false; genBtn.disabled = false;
-    obj.txt.textContent = 'نشد. دوباره امتحان کن.';
-    setMsg('bad', 'خطا: ' + e.message + '. ۳۰ ثانیه صبر کن و دوباره بفرست.');
+    busy = false; genBtn.disabled = false; stopRot();
+    cleanTyping(obj);
+    obj.txt.textContent = 'نشد عزیز، دوباره امتحان کن.';
+    setMsg('bad', 'خطا: ' + e.message + '. فیلترشکن رو خاموش کن، ۳۰ ثانیه صبر کن و دوباره بفرست.');
     scrollDown();
   });
 });
