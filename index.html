@@ -1,0 +1,855 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0b0d17">
+<title>هوش‌گراف | امیرحسین — طراح وب، سازنده آزمون، طراح لوگو</title>
+<meta name="description" content="هوش‌گراف؛ معرفی امیرحسین، طراح وب، سازنده آزمون آنلاین، طراح لوگو و کاور یوتیوب و تایپر. سفارش از طریق فرم تماس.">
+<meta property="og:title" content="هوش‌گراف | امیرحسین">
+<meta property="og:description" content="طراح وب، سازنده آزمون آنلاین، طراح لوگو و کاور یوتیوب">
+<meta property="og:image" content="og-image.jpg">
+<meta property="og:type" content="website">
+<link rel="icon" href="favicon.png" sizes="32x32">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css">
+<style>
+:root{
+  --bg:#0b0d17;--card:#141a2b;--line:rgba(255,255,255,.09);
+  --txt:#eef0f8;--muted:#9aa3c0;--o:#ff6b35;--p:#7b5cff;--ok:#35d07f;--bad:#ff5a5a;
+  --max:680px;
+}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{
+  font-family:'Vazirmatn',system-ui,-apple-system,'Segoe UI',Tahoma,sans-serif;
+  background-color:var(--bg);
+  background-image:
+    radial-gradient(620px 340px at 82% -80px,rgba(123,92,255,.22),transparent 70%),
+    radial-gradient(520px 300px at 8% 60px,rgba(255,107,53,.10),transparent 70%);
+  background-repeat:no-repeat;
+  color:var(--txt);line-height:1.9;font-size:15px;overflow-x:hidden;
+}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+button{font-family:inherit}
+[hidden]{display:none!important}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 16px}
+
+/* ---------- هدر ---------- */
+.hdr{position:sticky;top:0;z-index:30;background:#0b0d17;border-bottom:1px solid var(--line)}
+.hdr-in{max-width:var(--max);margin:0 auto;padding:9px 14px;display:flex;align-items:center;gap:12px}
+.brand{display:flex;align-items:center;gap:8px;font-weight:800;font-size:.95rem;margin-left:auto}
+.logo{width:34px;height:34px;border-radius:11px;display:grid;place-items:center;background:linear-gradient(135deg,var(--p),var(--o));color:#fff;flex:0 0 auto}
+.nav{display:none;gap:16px;font-size:.82rem;font-weight:700;color:var(--muted)}
+.nav a:hover{color:#fff}
+@media(min-width:560px){.nav{display:flex}}
+
+/* ---------- دکمه‌ها ---------- */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:7px;padding:11px 20px;border-radius:13px;font-weight:800;font-size:.85rem;border:1px solid transparent;cursor:pointer;transition:transform .15s}
+.btn:active{transform:scale(.97)}
+.btn.pri{background:linear-gradient(135deg,var(--p),var(--o));color:#fff;box-shadow:0 6px 18px rgba(123,92,255,.25)}
+.btn.gho{background:rgba(255,255,255,.06);border-color:var(--line);color:#fff}
+.btn.sm{padding:8px 14px;font-size:.78rem;border-radius:11px}
+.btn.full{width:100%}
+
+/* ---------- هیرو ---------- */
+.hero{text-align:center;padding:26px 0 8px}
+.avatar-wrap{position:relative;width:124px;height:124px;margin:0 auto;border-radius:50%;padding:4px;background:linear-gradient(135deg,var(--p),var(--o))}
+.avatar-in{position:relative;width:100%;height:100%;border-radius:50%;overflow:hidden;background:#1a1f33;display:grid;place-items:center;font-weight:800;font-size:2.1rem;color:#c3b5ff}
+.avatar-in img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero h1{font-size:1.6rem;font-weight:800;letter-spacing:-.3px;margin:14px 0 2px}
+.hero-role{color:#ffb394;font-size:.9rem;font-weight:700}
+.hero-desc{color:var(--muted);font-size:.85rem;margin:10px auto 0;max-width:420px}
+.hero-btns{display:flex;gap:10px;justify-content:center;margin-top:18px;flex-wrap:wrap}
+
+/* ---------- بخش‌ها ---------- */
+.sec{padding:26px 0}
+.sec-t{font-size:1.12rem;font-weight:800;margin-bottom:3px;display:flex;align-items:center;gap:8px}
+.sec-t::before{content:'';width:4px;height:18px;border-radius:4px;background:linear-gradient(var(--o),var(--p))}
+.sec-s{color:var(--muted);font-size:.8rem;margin-bottom:14px}
+
+/* ---------- کارت مهارت ---------- */
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px}
+.card.wide{grid-column:1/-1}
+.card .ic{width:38px;height:38px;border-radius:11px;display:grid;place-items:center;background:rgba(123,92,255,.14);color:#b8a6ff;margin-bottom:10px}
+.card h3{font-size:.92rem;font-weight:800;margin-bottom:3px}
+.card p{font-size:.78rem;color:var(--muted);line-height:1.8}
+
+/* ---------- چت هوش مصنوعی ---------- */
+.chips{display:flex;gap:8px;overflow-x:auto;padding-bottom:6px;margin-bottom:8px;scrollbar-width:none}
+.chips::-webkit-scrollbar{display:none}
+.chip{flex:0 0 auto;padding:8px 16px;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,.05);color:var(--muted);font-size:.8rem;font-weight:700;cursor:pointer}
+.chip.on{background:linear-gradient(135deg,var(--p),var(--o));color:#fff;border-color:transparent}
+.think{display:flex;align-items:center;gap:10px;margin-bottom:12px;flex-wrap:wrap}
+.think-lbl{font-size:.74rem;color:var(--muted);font-weight:700}
+.tb{padding:6px 14px;border-radius:999px;border:1px solid var(--line);background:transparent;color:var(--muted);font-size:.74rem;font-weight:700;cursor:pointer}
+.tb.on{background:rgba(123,92,255,.18);border-color:rgba(123,92,255,.5);color:#c3b5ff}
+.chatlog{display:flex;flex-direction:column;gap:10px;margin-bottom:12px}
+.bub{max-width:100%;border-radius:14px;padding:10px 12px;font-size:.85rem}
+.bub.me{align-self:flex-end;max-width:88%;background:linear-gradient(135deg,var(--o),#ff955e);color:#fff;white-space:pre-wrap;word-break:break-word}
+.bub.ai{background:var(--card);border:1px solid var(--line)}
+.bub-label{font-size:.68rem;color:#a99cff;font-weight:800;margin-bottom:6px}
+.bub .txt{white-space:pre-wrap;word-break:break-word;line-height:1.95;max-height:420px;overflow:auto}
+.typing{display:inline-flex;gap:5px;align-items:center;padding:4px 0}
+.typing i{width:7px;height:7px;border-radius:50%;background:#7b5cff;display:block;animation:tp 1s infinite}
+.typing i:nth-child(2){animation-delay:.18s}
+.typing i:nth-child(3){animation-delay:.36s}
+@keyframes tp{0%,100%{opacity:.25;transform:translateY(0)}50%{opacity:1;transform:translateY(-2px)}}
+
+.codecard{margin-top:8px;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#0a0c16}
+.codecard .ch{display:flex;justify-content:space-between;align-items:center;padding:8px 12px;font-size:.74rem;font-weight:700;color:var(--muted);border-bottom:1px solid var(--line)}
+pre.code{direction:ltr;text-align:left;margin:0;padding:12px;overflow:auto;max-height:240px;font-size:11.5px;line-height:1.65;color:#c8e3a0;font-family:ui-monospace,Menlo,Consolas,monospace;white-space:pre}
+iframe.prev{width:100%;height:360px;border:0;border-top:1px solid var(--line);background:#fff;display:block}
+.actions{display:flex;gap:8px;padding:10px;flex-wrap:wrap}
+.btn2{flex:1;min-width:115px;display:inline-flex;align-items:center;justify-content:center;gap:6px;padding:10px;border-radius:11px;border:1px solid var(--line);background:rgba(255,255,255,.06);color:#fff;font-size:.78rem;font-weight:700;cursor:pointer}
+.btn2.pri{background:linear-gradient(135deg,var(--p),var(--o));border:0}
+.btn2:active{opacity:.85}
+
+.composer{display:flex;gap:8px;align-items:flex-end;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:8px}
+.composer textarea{flex:1;background:transparent;border:0;color:#fff;font-family:inherit;font-size:16px;line-height:1.8;resize:none;min-height:44px;max-height:120px;padding:8px;outline:none}
+.composer button{width:46px;height:46px;border-radius:50%;border:0;background:linear-gradient(135deg,var(--o),#ff955e);color:#fff;display:grid;place-items:center;cursor:pointer;flex:0 0 auto}
+.composer button:disabled{opacity:.5}
+.ai-status{display:none;margin-top:9px;padding:8px 13px;border-radius:11px;font-size:.78rem}
+.ai-status.ok{display:block;background:rgba(53,208,127,.12);border:1px solid rgba(53,208,127,.4);color:#8ee8b7}
+.ai-status.bad{display:block;background:rgba(255,90,90,.1);border:1px solid rgba(255,90,90,.4);color:#ffb3b3}
+
+/* ---------- فرم ---------- */
+.form label{display:block;font-size:.79rem;font-weight:700;color:var(--muted);margin-bottom:11px}
+.form input,.form select,.form textarea{
+  width:100%;margin-top:6px;background:rgba(255,255,255,.06);border:1px solid var(--line);
+  border-radius:12px;padding:11px 12px;color:#fff;font-family:inherit;font-size:16px;outline:none
+}
+.form input:focus,.form select:focus,.form textarea:focus{border-color:var(--o)}
+.form select{appearance:none;-webkit-appearance:none}
+.form option{background:#141a2b;color:#fff}
+.form textarea{resize:vertical;min-height:100px;line-height:1.9}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+
+/* ---------- فوتر ---------- */
+.foot{text-align:center;padding:30px 16px 96px;color:var(--muted);font-size:.78rem}
+.foot b{color:#fff;font-size:.95rem;display:block;margin-bottom:6px}
+.foot .tiny{font-size:.7rem;opacity:.7;margin-top:6px}
+
+/* ---------- راهنمای شناور ---------- */
+.helper{position:fixed;left:14px;bottom:14px;z-index:50;display:flex;flex-direction:column;align-items:flex-start;gap:10px}
+.hball{width:54px;height:54px;border-radius:50%;border:0;background:linear-gradient(135deg,var(--p),var(--o));color:#fff;display:grid;place-items:center;cursor:pointer;box-shadow:0 8px 20px rgba(123,92,255,.35);animation:float 3.6s ease-in-out infinite}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+.hpanel{width:min(300px,calc(100vw - 28px));background:#141a2b;border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:0 12px 30px rgba(0,0,0,.5)}
+.hp-top{display:flex;align-items:center;justify-content:space-between;padding:10px 13px;border-bottom:1px solid var(--line);font-size:.82rem;font-weight:800}
+.hp-top button{background:transparent;border:0;color:var(--muted);font-size:1.2rem;line-height:1;cursor:pointer;padding:0 4px}
+.hp-body{padding:12px;max-height:60vh;overflow:auto;font-size:.82rem}
+.hp-body .q{display:block;width:100%;text-align:right;background:rgba(255,255,255,.05);border:1px solid var(--line);border-radius:11px;padding:9px 12px;margin-bottom:7px;color:#fff;font-size:.8rem;font-weight:700;cursor:pointer}
+.hp-body .q:active{opacity:.8}
+.hp-body .ans{color:var(--muted);line-height:1.95;white-space:pre-wrap}
+.hp-body .back{margin-top:10px;background:transparent;border:1px solid var(--line);color:#c3b5ff;border-radius:10px;padding:7px 14px;font-size:.76rem;font-weight:700;cursor:pointer}
+
+/* ---------- انیمیشن ورود ---------- */
+.js .rv{opacity:0;transform:translateY(14px);transition:opacity .45s ease,transform .45s ease}
+.js .rv.on{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .js .rv{opacity:1;transform:none;transition:none}
+  .hball{animation:none}
+  .typing i{animation:none;opacity:.7}
+}
+</style>
+</head>
+<body id="top">
+
+<!-- ================= هدر ================= -->
+<header class="hdr">
+  <div class="hdr-in">
+    <a class="brand" href="#top">
+      <span class="logo">
+        <svg viewBox="0 0 24 24" width="19" height="19" fill="currentColor" aria-hidden="true"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8z"/></svg>
+      </span>
+      <span>هوش‌گراف</span>
+    </a>
+    <nav class="nav">
+      <a href="#skills">مهارت‌ها</a>
+      <a href="#ai">دستیار</a>
+      <a href="#contact">تماس</a>
+    </nav>
+    <a href="#contact" class="btn pri sm">سفارش</a>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- ================= هیرو ================= -->
+  <section class="hero">
+    <div class="avatar-wrap">
+      <div class="avatar-in">
+        <span>ا</span>
+        <img src="avatar.jpg" alt="امیرحسین — بنیان‌گذار هوش‌گراف" width="124" height="124" fetchpriority="high" onerror="this.style.display='none'">
+      </div>
+    </div>
+    <h1>هوش‌گراف</h1>
+    <p class="hero-role">امیرحسین — بنیان‌گذار</p>
+    <p class="hero-desc">تایپر، سازنده آزمون، طراح وب، طراح لوگو و طراح کاور یوتیوب. کارِ تمیز، سریع و قابل‌اتکا.</p>
+    <div class="hero-btns">
+      <a href="#contact" class="btn pri">ثبت سفارش</a>
+      <a href="#ai" class="btn gho">گفت‌وگو با دستیار</a>
+    </div>
+  </section>
+
+  <!-- ================= مهارت‌ها ================= -->
+  <section id="skills" class="sec rv">
+    <h2 class="sec-t">مهارت‌ها</h2>
+    <p class="sec-s">همین‌ها؛ نه کمتر، نه بیشتر.</p>
+    <div class="grid">
+
+      <article class="card">
+        <span class="ic">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M6 10h.01M10 10h.01M14 10h.01M18 10h.01M7 14h10"/></svg>
+        </span>
+        <h3>تایپر</h3>
+        <p>تایپ سریع و دقیق متون فارسی و انگلیسی، با رعایت نیم‌فاصله و علائم.</p>
+      </article>
+
+      <article class="card">
+        <span class="ic">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z"/><path d="M9 8h6M9 12h6M9 16h3"/></svg>
+        </span>
+        <h3>سازنده آزمون</h3>
+        <p>ساخت آزمون آنلاین درسی با تایمر، تصحیح خودکار، پاسخنامه و نسخه چاپی.</p>
+      </article>
+
+      <article class="card">
+        <span class="ic">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+        </span>
+        <h3>طراح وب</h3>
+        <p>صفحه‌های سریع و سبک، مخصوص موبایل، آماده انتشار روی گیت‌هاب.</p>
+      </article>
+
+      <article class="card">
+        <span class="ic">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4 12.5-12.5z"/></svg>
+        </span>
+        <h3>طراح لوگو</h3>
+        <p>لوگوی ساده و به‌یادماندنی، مناسب برند شخصی و کسب‌وکار کوچک.</p>
+      </article>
+
+      <article class="card wide">
+        <span class="ic">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="14" rx="3"/><polygon points="10 8 16 11 10 14"/></svg>
+        </span>
+        <h3>طراح کاور یوتیوب</h3>
+        <p>کاور جذاب و خوانا برای ویدیوهای یوتیوب، با ترکیب‌بندی و تایپوگرافی درست.</p>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- ================= دستیار هوشمند ================= -->
+  <section id="ai" class="sec rv">
+    <h2 class="sec-t">دستیار هوشمند</h2>
+    <p class="sec-s">آزمون درسی بساز، کد HTML بگیر، یا فقط سوالت را بپرس.</p>
+
+    <div class="chips" id="modeChips">
+      <button class="chip on" data-mode="chat" type="button">گفت‌وگو</button>
+      <button class="chip" data-mode="exam" type="button">آزمون درسی</button>
+      <button class="chip" data-mode="code" type="button">کد HTML</button>
+    </div>
+
+    <div class="think">
+      <span class="think-lbl">دقت پاسخ:</span>
+      <button class="tb" data-t="fast" type="button">سریع</button>
+      <button class="tb on" data-t="balanced" type="button">متعادل</button>
+      <button class="tb" data-t="deep" type="button">دقیق</button>
+    </div>
+
+    <div class="chatlog" id="chatLog">
+      <div class="bub ai">
+        <div class="bub-label">هوش‌گراف AI</div>
+        <div class="txt">سلام 👋 من دستیار هوش‌گرافم. بگو چی می‌خوای؛ مثلاً:
+«آزمون فصل اول ریاضی نهم بساز»
+«یک صفحه معرفی برای کافه با HTML بده»</div>
+      </div>
+    </div>
+
+    <div class="composer">
+      <textarea id="prompt" rows="1" placeholder="پیامت را بنویس…"></textarea>
+      <button id="sendBtn" type="button" aria-label="ارسال">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2 11 13"/><path d="M22 2 15 22l-4-9-9-4 20-7z"/></svg>
+      </button>
+    </div>
+    <div id="aiStatus" class="ai-status"></div>
+  </section>
+
+  <!-- ================= تماس ================= -->
+  <section id="contact" class="sec rv">
+    <h2 class="sec-t">سفارش و ارتباط</h2>
+    <p class="sec-s">فرم را پر کن؛ پیامت مستقیم به دستم می‌رسد.</p>
+
+    <form id="orderForm" class="form" novalidate>
+      <label>نام و نام خانوادگی
+        <input id="fName" type="text" autocomplete="name" placeholder="مثلاً علی رضایی" required>
+      </label>
+      <label>ایمیل یا آیدی (برای پاسخ)
+        <input id="fContact" type="text" autocomplete="email" placeholder="برای جواب دادن بهت" required>
+      </label>
+      <label>موضوع
+        <select id="fSubject">
+          <option>ساخت آزمون درسی</option>
+          <option>طراحی سایت</option>
+          <option>طراحی لوگو</option>
+          <option>طراحی کاور یوتیوب</option>
+          <option>تایپ</option>
+          <option>سایر</option>
+        </select>
+      </label>
+      <label>توضیح سفارش
+        <textarea id="fMsg" placeholder="دقیق بنویس چی می‌خوای…" required></textarea>
+      </label>
+
+      <input type="text" id="hp" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+      <button class="btn pri full" id="sendOrder" type="submit">ارسال درخواست</button>
+      <div id="formStatus" class="ai-status"></div>
+    </form>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <b>هوش‌گراف</b>
+  <p>ساخته‌شده توسط امیرحسین</p>
+  <p class="tiny">© تمام حقوق محفوظ است</p>
+</footer>
+
+<!-- ================= راهنمای شناور ================= -->
+<div class="helper">
+  <div class="hpanel" id="hpanel" hidden>
+    <div class="hp-top">
+      <span>راهنمای سریع</span>
+      <button id="hclose" type="button" aria-label="بستن">×</button>
+    </div>
+    <div class="hp-body" id="hbody"></div>
+  </div>
+  <button class="hball" id="hball" type="button" aria-label="راهنما">
+    <svg viewBox="0 0 24 24" width="25" height="25" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="9"/>
+      <path d="M9.6 9.2a2.5 2.5 0 1 1 3.4 2.3c-.6.3-.9.9-.9 1.6v.3"/>
+      <circle cx="12" cy="17" r=".8" fill="currentColor" stroke="none"/>
+    </svg>
+  </button>
+</div>
+
+<script>
+(function () {
+'use strict';
+
+/* ============ ابزارهای کوچک ============ */
+function $(id){ return document.getElementById(id); }
+function mk(tag, cls, txt){
+  var e = document.createElement(tag);
+  if (cls) e.className = cls;
+  if (txt !== undefined && txt !== null) e.textContent = txt;
+  return e;
+}
+
+/* ============ انیمیشن ورود بخش‌ها ============ */
+(function(){
+  if (!('IntersectionObserver' in window)) return;
+  document.documentElement.className += ' js';
+  var io = new IntersectionObserver(function (entries) {
+    for (var i = 0; i < entries.length; i++) {
+      if (entries[i].isIntersecting) {
+        entries[i].target.classList.add('on');
+        io.unobserve(entries[i].target);
+      }
+    }
+  }, { threshold: 0.12 });
+  var items = document.querySelectorAll('.rv');
+  for (var i = 0; i < items.length; i++) io.observe(items[i]);
+})();
+
+/* =========================================================
+   دستیار هوشمند
+   ========================================================= */
+var AI_KEY = 'sk_5j7AfDN6SxC0YeO9DibvAAKfypwo1weB';
+var AI_URL = 'https://text.pollinations.ai/openai';
+
+var chatLog  = $('chatLog');
+var input    = $('prompt');
+var sendBtn  = $('sendBtn');
+var aiStatus = $('aiStatus');
+
+var mode = 'chat';
+var think = 'balanced';
+var busy = false;
+var history = [];          /* حافظه گفت‌وگو */
+var HISTORY_MAX = 6;
+
+/* ---- پرامپت‌های سیستمی ---- */
+var SYS_CHAT =
+  'تو دستیار فارسی «هوش‌گراف» هستی. بنیان‌گذارش امیرحسین است. ' +
+  'همیشه مودب، گرم و محترمانه جواب بده. کوتاه و مفید بنویس و نیم‌فاصله را رعایت کن. ' +
+  'اگر کاربر سوال درسی پرسید کامل توضیح بده. ' +
+  'اگر خواست آزمون یا کد HTML، همان‌جا هم می‌توانی کد بدهی، اما بهتر است بگویی از تب «آزمون درسی» یا «کد HTML» استفاده کند تا خروجی کامل‌تر بگیرد. ' +
+  'اگر چیزی را نمی‌دانی صادقانه بگو.';
+
+var SYS_CODE =
+  'تو یک برنامه‌نویس وب حرفه‌ای هستی. ' +
+  'خروجی تو فقط و فقط یک فایل HTML کامل است: از <!doctype html> تا </html>، بدون هیچ توضیح اضافه و بدون بلوک کد مارک‌داون. ' +
+  'همه CSS و JS داخل همان فایل باشد. ' +
+  'فارسی، راست‌چین، فونت وزیرمتن از CDN، کاملاً ریسپانسیو و مناسب موبایل ضعیف. ' +
+  'بدون کتابخانه سنگین، انیمیشن‌ها سبک و با CSS. طراحی مدرن و تمیز.';
+
+var SYS_EXAM =
+  'تو طراح آزمون حرفه‌ای مدارس ایران هستی و با سبک سوال‌های قلم‌چی و گاما آشنایی. ' +
+  'وقتی کاربر موضوع می‌دهد، آزمونی دقیقاً مطابق کتاب درسی همان پایه می‌سازی؛ سوال‌ها واقعی، سطح‌بندی‌شده و بدون تکرار. ' +
+  'خروجی تو فقط و فقط یک فایل HTML کامل است: از <!doctype html> تا </html>، بدون هیچ توضیح اضافه و بدون بلوک کد مارک‌داون. ' +
+  'همه CSS و JS داخل همان فایل باشد. ' +
+  'فارسی، راست‌چین، فونت وزیرمتن از CDN، مناسب موبایل ضعیف، بدون کتابخانه سنگین. ' +
+  'آزمون شامل ۱۰ سوال چهارگزینه‌ای (۴ گزینه) و ۳ سوال تشریحی باشد. ' +
+  'امکانات لازم: تایمر، تصحیح خودکار چهارگزینه‌ای، نمایش نمره، پاسخنامه تشریحی، دکمه تلاش مجدد و دکمه چاپ.';
+
+var THINK = {
+  fast:     ' خیلی سریع و خلاصه جواب بده؛ حداکثر چند خط.',
+  balanced: ' متعادل و کامل جواب بده.',
+  deep:     ' عمیق و دقیق جواب بده، همه نکات را بررسی کن و در پایان جمع‌بندی کن.'
+};
+
+/* ---- وضعیت ---- */
+function aiMsg(text, type){
+  if (!text) { aiStatus.className = 'ai-status'; aiStatus.textContent = ''; return; }
+  aiStatus.className = 'ai-status ' + (type || '');
+  aiStatus.textContent = text;
+}
+
+function scrollChat(){
+  try {
+    var last = chatLog.lastElementChild;
+    if (last) last.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+  } catch (e) {}
+}
+
+/* ---- کپی و دانلود ---- */
+function copyText(t){
+  function done(){ aiMsg('کپی شد ✅', 'ok'); }
+  function fallback(){
+    var ta = mk('textarea');
+    ta.value = t;
+    ta.style.position = 'fixed';
+    ta.style.opacity = '0';
+    document.body.appendChild(ta);
+    ta.select();
+    try { document.execCommand('copy'); } catch (e) {}
+    document.body.removeChild(ta);
+    done();
+  }
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(t).then(done, fallback);
+  } else {
+    fallback();
+  }
+}
+
+function downloadHTML(code){
+  var blob = new Blob([code], { type: 'text/html;charset=utf-8' });
+  var url = URL.createObjectURL(blob);
+  var a = mk('a');
+  a.href = url;
+  a.download = 'hooshgraph.html';
+  document.body.appendChild(a);
+  a.click();
+  setTimeout(function () {
+    URL.revokeObjectURL(url);
+    if (a.parentNode) a.parentNode.removeChild(a);
+  }, 1500);
+  aiMsg('دانلود شروع شد ⬇️', 'ok');
+}
+
+/* ---- استخراج کد HTML از پاسخ ---- */
+function extractCode(text){
+  if (!text) return '';
+  var s = String(text).replace(/\r/g, '');
+  var fence = s.match(/```[a-zA-Z]*\s*([\s\S]*?)```/);
+  if (fence && /<!doctype|<html/i.test(fence[1])) s = fence[1];
+  var i = s.search(/<!doctype html|<html[\s>]/i);
+  if (i > 0) s = s.slice(i);
+  var j = s.toLowerCase().lastIndexOf('</html>');
+  if (j > -1) s = s.slice(0, j + 7);
+  return s.trim();
+}
+
+/* ---- ساخت حباب‌ها ---- */
+function userBubble(text){
+  var b = mk('div', 'bub me', text);
+  chatLog.appendChild(b);
+  scrollChat();
+}
+
+function loadingBubble(){
+  var b = mk('div', 'bub ai');
+  b.appendChild(mk('div', 'bub-label', 'هوش‌گراف AI'));
+  var t = mk('div', 'typing');
+  t.innerHTML = '<i></i><i></i><i></i>';
+  b.appendChild(t);
+  chatLog.appendChild(b);
+  scrollChat();
+  return b;
+}
+
+function renderText(bubble, text){
+  bubble.innerHTML = '';
+  bubble.appendChild(mk('div', 'bub-label', 'هوش‌گراف AI'));
+  bubble.appendChild(mk('div', 'txt', text));
+  var row = mk('div', 'actions');
+  var b = mk('button', 'btn2', 'کپی متن');
+  b.type = 'button';
+  b.onclick = function () { copyText(text); };
+  row.appendChild(b);
+  bubble.appendChild(row);
+  scrollChat();
+}
+
+function renderCode(bubble, code, title){
+  bubble.innerHTML = '';
+  bubble.appendChild(mk('div', 'bub-label', 'هوش‌گراف AI'));
+
+  var card = mk('div', 'codecard');
+
+  var head = mk('div', 'ch');
+  head.appendChild(mk('span', null, title));
+  head.appendChild(mk('span', null, 'HTML'));
+  card.appendChild(head);
+
+  var pre = mk('pre', 'code', code.slice(0, 9000));
+  card.appendChild(pre);
+
+  var frame = document.createElement('iframe');
+  frame.className = 'prev';
+  frame.setAttribute('sandbox', 'allow-scripts');
+  frame.setAttribute('title', 'پیش‌نمایش خروجی');
+  frame.setAttribute('srcdoc', code);
+  card.appendChild(frame);
+
+  var act = mk('div', 'actions');
+  var b1 = mk('button', 'btn2 pri', 'کپی کد'); b1.type = 'button';
+  b1.onclick = function () { copyText(code); };
+  var b2 = mk('button', 'btn2', 'دانلود HTML'); b2.type = 'button';
+  b2.onclick = function () { downloadHTML(code); };
+  act.appendChild(b1);
+  act.appendChild(b2);
+  card.appendChild(act);
+
+  bubble.appendChild(card);
+  scrollChat();
+}
+
+/* ---- ارتباط با سرور ---- */
+function callAI(messages){
+  var ctrl = window.AbortController ? new AbortController() : null;
+  var timer = setTimeout(function () { if (ctrl) ctrl.abort(); }, 80000);
+
+  var opts = {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer ' + AI_KEY
+    },
+    body: JSON.stringify({
+      model: 'openai',
+      messages: messages,
+      temperature: 0.75,
+      seed: Math.floor(Math.random() * 999999)
+    })
+  };
+  if (ctrl) opts.signal = ctrl.signal;
+
+  return fetch(AI_URL, opts).then(function (res) {
+    clearTimeout(timer);
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    return res.json();
+  }).then(function (data) {
+    var t = data && data.choices && data.choices[0] &&
+            data.choices[0].message && data.choices[0].message.content;
+    if (!t) throw new Error('empty');
+    return t;
+  });
+}
+
+/* مسیر جایگزین اگر مسیر اصلی جواب نداد */
+function callFallback(messages){
+  var txt = '';
+  for (var i = 0; i < messages.length; i++) {
+    txt += messages[i].role + ': ' + messages[i].content + '\n\n';
+  }
+  var url = 'https://text.pollinations.ai/' + encodeURIComponent(txt.slice(0, 1400)) + '?model=openai';
+  return fetch(url).then(function (res) {
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    return res.text();
+  }).then(function (t) {
+    if (!t || !t.trim()) throw new Error('empty');
+    return t;
+  });
+}
+
+/* ---- ساخت پیام‌ها ---- */
+function buildMessages(text){
+  var sys = (mode === 'exam') ? SYS_EXAM : (mode === 'code' ? SYS_CODE : SYS_CHAT);
+  sys += (THINK[think] || '');
+
+  var msgs = [{ role: 'system', content: sys }];
+  for (var i = 0; i < history.length; i++) msgs.push(history[i]);
+  msgs.push({ role: 'user', content: text });
+
+  history.push({ role: 'user', content: text });
+  if (history.length > HISTORY_MAX) history = history.slice(history.length - HISTORY_MAX);
+
+  return msgs;
+}
+
+/* ---- ارسال ---- */
+function send(){
+  if (busy) return;
+
+  var text = input.value.trim();
+  if (text.length < 2) {
+    aiMsg('یکم بیشتر بنویس 🙂', 'bad');
+    return;
+  }
+
+  busy = true;
+  sendBtn.disabled = true;
+  aiMsg('در حال نوشتن جواب…', 'ok');
+
+  userBubble(text);
+  input.value = '';
+  input.style.height = 'auto';
+
+  var bubble = loadingBubble();
+  var messages = buildMessages(text);
+
+  callAI(messages)
+    .catch(function () { return callFallback(messages); })
+    .then(function (reply) {
+      var code = extractCode(reply);
+
+      if (code && /<!doctype|<html/i.test(code) && code.length > 120) {
+        history.push({ role: 'assistant', content: reply });
+        if (history.length > HISTORY_MAX) history = history.slice(history.length - HISTORY_MAX);
+        renderCode(bubble, code,
+          mode === 'exam' ? 'آزمون آماده است — پیش‌نمایش پایین' :
+          mode === 'code' ? 'کد آماده است — پیش‌نمایش پایین' :
+                            'کد آماده است — پیش‌نمایش پایین');
+        aiMsg('آماده شد ✅', 'ok');
+      } else {
+        history.push({ role: 'assistant', content: reply });
+        if (history.length > HISTORY_MAX) history = history.slice(history.length - HISTORY_MAX);
+        renderText(bubble, reply);
+        aiMsg('آماده شد ✅', 'ok');
+      }
+    })
+    .catch(function () {
+      bubble.innerHTML = '';
+      bubble.appendChild(mk('div', 'bub-label', 'هوش‌گراف AI'));
+      bubble.appendChild(mk('div', 'txt', 'ارتباط برقرار نشد. چند لحظه صبر کن و دوباره بفرست.'));
+      aiMsg('خطا در ارتباط با سرور', 'bad');
+    })
+    .then(function () {
+      busy = false;
+      sendBtn.disabled = false;
+      scrollChat();
+    });
+}
+
+/* ---- رویدادها ---- */
+sendBtn.addEventListener('click', send);
+
+input.addEventListener('input', function () {
+  input.style.height = 'auto';
+  input.style.height = Math.min(input.scrollHeight, 120) + 'px';
+});
+
+input.addEventListener('keydown', function (e) {
+  if (e.key === 'Enter' && !e.shiftKey) {
+    e.preventDefault();
+    send();
+  }
+});
+
+/* ---- انتخاب حالت ---- */
+(function () {
+  var chips = $('modeChips').getElementsByTagName('button');
+  for (var i = 0; i < chips.length; i++) {
+    chips[i].addEventListener('click', function () {
+      var m = this.getAttribute('data-mode');
+      if (m === mode) return;
+      mode = m;
+      history = [];
+      for (var j = 0; j < chips.length; j++) {
+        chips[j].className = (chips[j] === this) ? 'chip on' : 'chip';
+      }
+      var ph = {
+        chat: 'پیامت را بنویس…',
+        exam: 'مثلاً: آزمون فصل اول علوم پنجم…',
+        code: 'مثلاً: یک صفحه معرفی برای کافه با HTML…'
+      };
+      input.placeholder = ph[mode] || 'بنویس…';
+      aiMsg('', '');
+    });
+  }
+})();
+
+/* ---- انتخاب دقت ---- */
+(function () {
+  var tbs = $('thinkBtns') ? $('thinkBtns').getElementsByTagName('button') : [];
+  for (var i = 0; i < tbs.length; i++) {
+    tbs[i].addEventListener('click', function () {
+      think = this.getAttribute('data-t');
+      for (var j = 0; j < tbs.length; j++) {
+        tbs[j].className = (tbs[j] === this) ? 'tb on' : 'tb';
+      }
+    });
+  }
+})();
+
+/* =========================================================
+   فرم تماس — ارسال به ایمیل، بدون نمایش آدرس
+   ========================================================= */
+var MAIL_TOKEN = 'ZXJtaXlhMTM5MTIwMTJAZ21haWwuY29t'; /* رمزگذاری‌شده؛ در ظاهر سایت دیده نمی‌شود */
+function mailAddress(){
+  try { return atob(MAIL_TOKEN); } catch (e) { return ''; }
+}
+
+(function () {
+  var form   = $('orderForm');
+  var status = $('formStatus');
+  var btn    = $('sendOrder');
+
+  function setSt(text, type){
+    if (!text) { status.className = 'ai-status'; status.textContent = ''; return; }
+    status.className = 'ai-status ' + (type || '');
+    status.textContent = text;
+  }
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    if (busy) return;
+
+    var name    = $('fName').value.trim();
+    var contact = $('fContact').value.trim();
+    var subject = $('fSubject').value;
+    var msg     = $('fMsg').value.trim();
+    var honey   = $('hp').value;
+
+    if (honey) return; /* تله ربات */
+    if (name.length < 2) { setSt('نامت را کامل بنویس.', 'bad'); return; }
+    if (contact.length < 3) { setSt('ایمیل یا آیدی را بنویس تا بتوانم جواب بدهم.', 'bad'); return; }
+    if (msg.length < 10) { setSt('توضیح سفارش را کمی کامل‌تر بنویس.', 'bad'); return; }
+
+    btn.disabled = true;
+    setSt('در حال ارسال…', 'ok');
+
+    fetch('https://formsubmit.co/ajax/' + mailAddress(), {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify({
+        name: name,
+        contact: contact,
+        subject: subject,
+        message: msg,
+        _subject: 'درخواست جدید از سایت هوش‌گراف',
+        _template: 'table',
+        _captcha: 'false'
+      })
+    }).then(function (res) {
+      return res.json().catch(function () { return {}; });
+    }).then(function (data) {
+      var ok = (data.success === 'true' || data.success === true);
+      if (ok) {
+        setSt('درخواستت رسید ✅ به‌زودی جواب می‌دهم.', 'ok');
+        form.reset();
+      } else {
+        setSt('ارسال نشد. یک‌بار دیگر امتحان کن.', 'bad');
+      }
+    }).catch(function () {
+      setSt('ارسال نشد. اتصال اینترنت را بررسی کن.', 'bad');
+    }).then(function () {
+      btn.disabled = false;
+    });
+  });
+})();
+
+/* =========================================================
+   راهنمای شناور (بدون هوش مصنوعی)
+   ========================================================= */
+(function () {
+  var ball   = $('hball');
+  var panel  = $('hpanel');
+  var body   = $('hbody');
+  var close  = $('hclose');
+
+  var FAQ = [
+    { q: 'هوش‌گراف چیه؟',
+      a: 'هوش‌گراف صفحهٔ معرفی امیرحسینه؛ کسی که تایپ می‌کنه، آزمون درسی می‌سازه، سایت طراحی می‌کنه، لوگو می‌کشه و کاور یوتیوب درست می‌کنه.' },
+    { q: 'چه خدماتی داری؟',
+      a: '۱) تایپ متون فارسی و انگلیسی\n۲) ساخت آزمون آنلاین درسی\n۳) طراحی سایت\n۴) طراحی لوگو\n۵) طراحی کاور یوتیوب' },
+    { q: 'چطور سفارش بدم؟',
+      a: 'پایین همین صفحه فرم «سفارش و ارتباط» را پر کن و دکمه ارسال را بزن. پیامت مستقیم به دست امیرحسین می‌رسد.' },
+    { q: 'هزینه و زمان تحویل؟',
+      a: 'بستگی به نوع و حجم کار دارد. در فرم تماس توضیح بده تا قیمت و زمان دقیق بهت گفته شود.' },
+    { q: 'دستیار هوشمند چیه؟',
+      a: 'بخشی از سایت که با هوش مصنوعی کار می‌کند؛ می‌توانی ازش بخواهی آزمون درسی یا کد HTML بسازد و خروجی را کپی یا دانلود کنی.' },
+    { q: 'چطور با AI کار کنم؟',
+      a: 'یکی از سه تب «گفت‌وگو»، «آزمون درسی» یا «کد HTML» را انتخاب کن، خواسته‌ات را بنویس و ارسال کن. جواب با دکمه‌های کپی و دانلود می‌آید.' }
+  ];
+
+  function renderList(){
+    body.innerHTML = '';
+    var hi = mk('div', 'ans', 'سلام 👋 چه کمکی نیاز داری؟');
+    hi.style.color = '#fff';
+    hi.style.marginBottom = '10px';
+    body.appendChild(hi);
+
+    for (var i = 0; i < FAQ.length; i++) {
+      (function (item) {
+        var b = mk('button', 'q', item.q);
+        b.type = 'button';
+        b.onclick = function () { renderAnswer(item); };
+        body.appendChild(b);
+      })(FAQ[i]);
+    }
+  }
+
+  function renderAnswer(item){
+    body.innerHTML = '';
+    body.appendChild(mk('div', 'bub-label', item.q));
+    body.appendChild(mk('div', 'ans', item.a));
+    var back = mk('button', 'back', 'بازگشت به سوال‌ها');
+    back.type = 'button';
+    back.onclick = renderList;
+    body.appendChild(back);
+  }
+
+  ball.addEventListener('click', function () {
+    if (panel.hidden) {
+      renderList();
+      panel.hidden = false;
+    } else {
+      panel.hidden = true;
+    }
+  });
+
+  close.addEventListener('click', function () { panel.hidden = true; });
+
+  /* بستن با کلیک بیرون */
+  document.addEventListener('click', function (e) {
+    if (panel.hidden) return;
+    if (panel.contains(e.target) || ball.contains(e.target)) return;
+    panel.hidden = true;
+  });
+})();
+
+})();
+</script>
+</body>
+</html>
